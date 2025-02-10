@@ -101,22 +101,42 @@
             gap: 20px;
             margin-top: 20px;
         }
+    
+        /* 单个视频容器 */
         .video-wrapper {
-            flex: 1 1 30%;
-            max-width: 30%;
-            aspect-ratio: 9 / 16; /* 设置为竖屏比例 */
+            flex: 1 1 45%;
+            max-width: 48%;
+            aspect-ratio: 9 / 16; /* 设置竖屏比例 */
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             overflow: hidden;
             transition: transform 0.3s;
         }
+        
+        /* 鼠标悬停效果 */
         .video-wrapper:hover {
             transform: scale(1.05);
         }
+        
+        /* 视频内容 */
         .video-wrapper iframe {
             width: 100%;
             height: 100%;
             border: none;
+        }
+        
+        /* 手机端优化 */
+        @media (max-width: 768px) {
+            .video-wrapper {
+                flex: 1 1 100%; /* 视频容器在小屏幕下占满整行 */
+                max-width: 100%;
+                aspect-ratio: 9 / 16; /* 保持竖屏比例 */
+            }
+        
+            .video-container {
+                flex-direction: column;
+                align-items: center; /* 视频居中显示 */
+            }
         }
 
         .contact-info {
